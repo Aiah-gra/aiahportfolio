@@ -1,0 +1,403 @@
+
+/* =================================
+   AIAH KATE - CYBERPUNK PORTFOLIO
+   ================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+    --black: #050308;
+    --dark: #0c0712;
+    --purple: #bd72f5;
+    --light-purple: #dfaaff;
+    --neon: #d78aff;
+    --white: #f8eaff;
+    --border: rgba(205, 139, 255, 0.55);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND EFFECT */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(133, 40, 190, 0.15), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(106, 35, 160, 0.12), transparent 35%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* GENERAL */
+
+a {
+    color: var(--light-purple);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: white;
+    text-shadow: 0 0 12px var(--neon);
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--light-purple);
+    text-transform: uppercase;
+}
+
+section {
+    padding: 90px 9%;
+    border-bottom: 1px solid var(--border);
+}
+
+/* NAVIGATION */
+
+header {
+    width: 100%;
+    background: rgba(5, 3, 8, 0.96);
+    border-bottom: 1px solid var(--purple);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    min-height: 75px;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--light-purple);
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px var(--purple);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul a {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+nav ul a:hover {
+    color: var(--neon);
+}
+
+/* MENU BUTTON */
+
+#menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--light-purple);
+    border: 1px solid var(--purple);
+    padding: 8px 12px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* HOME SECTION */
+
+#home {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+        linear-gradient(rgba(5, 3, 8, 0.75), rgba(5, 3, 8, 0.9)),
+        radial-gradient(circle at center, #301044, #050308 70%);
+}
+
+#home h1 {
+    font-size: clamp(35px, 6vw, 75px);
+    line-height: 1.2;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(189, 114, 245, 0.5);
+}
+
+#home p {
+    max-width: 600px;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #e6c9f5;
+}
+
+/* BUTTONS */
+
+button,
+.btn,
+.button {
+    font-family: 'Orbitron', sans-serif;
+    background: var(--purple);
+    color: var(--black);
+    border: 1px solid var(--light-purple);
+    padding: 14px 25px;
+    margin-top: 25px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.button:hover {
+    background: transparent;
+    color: var(--light-purple);
+    box-shadow: 0 0 20px var(--purple);
+}
+
+/* PROFILE PICTURE */
+
+.photo-frame {
+    width: 300px;
+    height: 350px;
+    padding: 8px;
+    border: 2px solid var(--purple);
+    background: var(--dark);
+    box-shadow: 0 0 20px rgba(189, 114, 245, 0.3);
+    position: relative;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--border);
+}
+
+/* PROFILE CARD */
+
+.profile-card {
+    background: rgba(20, 10, 29, 0.85);
+    border: 1px solid var(--purple);
+    padding: 25px;
+    box-shadow: 0 0 18px rgba(189, 114, 245, 0.15);
+}
+
+/* SECTION HEADINGS */
+
+section h2 {
+    font-size: clamp(25px, 4vw, 42px);
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(189, 114, 245, 0.4);
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: var(--purple);
+    margin-top: 15px;
+    box-shadow: 0 0 12px var(--purple);
+}
+
+section p {
+    color: #e4d3ed;
+    line-height: 1.8;
+    font-size: 19px;
+}
+
+/* ABOUT AND INTRODUCTION */
+
+#about,
+#introduction,
+#goals {
+    background: rgba(12, 7, 18, 0.8);
+}
+
+#about p,
+#introduction p,
+#goals p {
+    max-width: 900px;
+}
+
+/* PROJECTS */
+
+#projects {
+    background: #08050d;
+}
+
+#projects h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+#projects .project-card,
+#projects .card,
+#projects article {
+    background: linear-gradient(145deg, #170b22, #09050e);
+    border: 1px solid var(--border);
+    padding: 25px;
+    margin: 18px 0;
+    transition: 0.3s ease;
+}
+
+#projects .project-card:hover,
+#projects .card:hover,
+#projects article:hover {
+    transform: translateY(-5px);
+    border-color: var(--light-purple);
+    box-shadow: 0 0 20px rgba(189, 114, 245, 0.25);
+}
+
+/* SKILLS */
+
+#skills {
+    background: #0d0714;
+}
+
+#skills ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+#skills li {
+    background: #170c22;
+    border: 1px solid var(--border);
+    padding: 18px;
+    color: var(--white);
+    transition: 0.3s ease;
+}
+
+#skills li:hover {
+    border-color: var(--light-purple);
+    color: var(--light-purple);
+    box-shadow: 0 0 15px rgba(189, 114, 245, 0.3);
+}
+
+/* CONTACT */
+
+#contact {
+    background: #08050d;
+}
+
+#contact a {
+    color: var(--light-purple);
+    border-bottom: 1px solid var(--purple);
+}
+
+#contact p {
+    margin: 12px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050308;
+    border-top: 1px solid var(--purple);
+    text-align: center;
+    padding: 25px;
+    color: #cda4e7;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    nav ul.open,
+    nav ul.show {
+        display: flex;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    #home h1 {
+        font-size: 36px;
+    }
+
+    .photo-frame {
+        width: 250px;
+        height: 300px;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #home h1 {
+        font-size: 29px;
+    }
+
+    #home p {
+        font-size: 17px;
+    }
+
+    .photo-frame {
+        width: 220px;
+        height: 270px;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr;
+    }
+}
